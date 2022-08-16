@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leran JQuery</title>
+
+    <script src="./jquery.js"></script>
+    <style>
+      .change {
+        background-color: bisque;
+        color: cadetblue;
+        font-weight: 700;
+      }
+
+      #boxes_wrap {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+        padding: 10px;
+        border: 5px solid black;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://sekolahkoding.com/img/logo.png" alt="" />
+    <h1>Belajar JQuery!!</h1>
+    <div id="box1">Box 1</div>
+    <div id="boxes_wrap">
+      <div class="boxes">Baris Pertama</div>
+      <div class="boxes">Baris Kedua</div>
+      <div class="boxes">Baris Ketiga</div>
+    </div>
+
+    <form>
+      <input type="text" id="inputText" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      //memastikan file di load dengan sempurna
+      $(document).ready(function () {
+        //--------------------Selector JQuery--------------------
+        // $("h1").css("color", "brown");
+        // $("h1").css("font-size", "36px");
+        // $("#box1").css("color", "blue");
+        // $(".boxes:first").css("color", "red");
+        // $(".boxes:eq(1)").css("color", "yellow");
+        // $(".boxes:eq(2)").css("color", "green");
+        // $(".boxes:last").css("color", "lightblue");
+        //--------------------Event--------------------
+        $("h1").click(function () {
+          // $("h1").css({
+          //   color: "purple",
+          //   fontSize: "12px",
+          //   backgroundColor: "salmon",
+          //   width: "100px",
+          // });
+
+          // Jika di klik maka akan menambahkan class
+          //$("h1").addClass("change"); //Ada juga removeClass
+
+          // Fungsi jika di klik akan menambahkan/menghapus class sesuai kondisi
+          $("h1").toggleClass("change");
+        });
+
+        $("h1").mouseleave(function () {
+          $("h1").css("color", "brown");
+        });
+        $(".boxes").mouseenter(function () {
+          $(this).css("color", "black");
+        });
+        $(".boxes").mouseleave(function () {
+          $(this).css("color", "red");
+        });
+        // --------------------Get dan Set Nilai--------------------
+        $("form").submit(function () {
+          var tulisan = $("#inputText").val();
+          $("h1").text(tulisan);
+
+          // Mencegah sifat asli forrm submit
+          event.preventDefault();
+        });
+
+        //--------------------Menambahkan dan menghapus--------------------
+        // Ada append, prepend, after, before
+        // Append elemen muncul di akhir
+        // Prepend elemen muncul di awal
+        $("#boxes_wrap").prepend("<h4>Hallo!</h4>");
+        // After elemen muncul di akhir diluar elemen panggilan
+        // Before elemen muncul di awal diluar elemen panggilan
+        $("#boxes_wrap").after("<div>Ini elemen After</div>");
+        // Menghapus ada Remove & Empty
+        // Remove hapus 1 elemen yang dipanggil
+        // $("#boxes_wrap").remove();
+        // Empty hanya hapus isi konten elemen yang dipanggil
+        // $("#box1").empty();
+
+        // --------------------Dimensi--------------------
+
+        var nilaiElemen = $("#boxes_wrap").innerWidth();
+        $("#box1").text(nilaiElemen);
+      });
+    </script>
+  </body>
+</html>
