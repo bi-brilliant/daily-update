@@ -27,16 +27,11 @@
     <img src="https://sekolahkoding.com/img/logo.png" alt="" />
     <h1>Belajar JQuery!!</h1>
     <div id="box1">Box 1</div>
-    <div id="boxes_wrap">
-      <div class="boxes">Baris Pertama</div>
-      <div class="boxes">Baris Kedua</div>
-      <div class="boxes">Baris Ketiga</div>
-    </div>
+    <br />
 
-    <form>
-      <input type="text" id="inputText" />
-      <input type="submit" />
-    </form>
+    <button id="btn1">Show</button>
+    <button id="btn2">Hide</button>
+    <button id="btn3">Toggle</button>
 
     <script>
       //memastikan file di load dengan sempurna
@@ -50,57 +45,51 @@
         // $(".boxes:eq(2)").css("color", "green");
         // $(".boxes:last").css("color", "lightblue");
         //--------------------Event--------------------
-        $("h1").click(function () {
-          // $("h1").css({
-          //   color: "purple",
-          //   fontSize: "12px",
-          //   backgroundColor: "salmon",
-          //   width: "100px",
-          // });
-
-          // Jika di klik maka akan menambahkan class
-          //$("h1").addClass("change"); //Ada juga removeClass
-
-          // Fungsi jika di klik akan menambahkan/menghapus class sesuai kondisi
-          $("h1").toggleClass("change");
-        });
-
-        $("h1").mouseleave(function () {
-          $("h1").css("color", "brown");
-        });
-        $(".boxes").mouseenter(function () {
-          $(this).css("color", "black");
-        });
-        $(".boxes").mouseleave(function () {
-          $(this).css("color", "red");
-        });
+        // $("h1").click(function () {
+        // $("h1").css({
+        //   color: "purple",
+        //   fontSize: "12px",
+        //   backgroundColor: "salmon",
+        //   width: "100px",
+        // });
+        // Jika di klik maka akan menambahkan class
+        //$("h1").addClass("change"); //Ada juga removeClass
+        // Fungsi jika di klik akan menambahkan/menghapus class sesuai kondisi
+        //   $("h1").toggleClass("change");
+        // });
+        // $("h1").mouseleave(function () {
+        //   $("h1").css("color", "brown");
+        // });
+        // $(".boxes").mouseenter(function () {
+        //   $(this).css("color", "black");
+        // });
+        // $(".boxes").mouseleave(function () {
+        //   $(this).css("color", "red");
+        // });
         // --------------------Get dan Set Nilai--------------------
-        $("form").submit(function () {
-          var tulisan = $("#inputText").val();
-          $("h1").text(tulisan);
-
-          // Mencegah sifat asli forrm submit
-          event.preventDefault();
-        });
-
+        // $("form").submit(function () {
+        //   var tulisan = $("#inputText").val();
+        //   $("h1").text(tulisan);
+        // Mencegah sifat asli forrm submit
+        //   event.preventDefault();
+        // });
         //--------------------Menambahkan dan menghapus--------------------
         // Ada append, prepend, after, before
         // Append elemen muncul di akhir
-        // Prepend elemen muncul di awal
-        $("#boxes_wrap").prepend("<h4>Hallo!</h4>");
+        // // Prepend elemen muncul di awal
+        // $("#boxes_wrap").prepend("<h4>Hallo!</h4>");
         // After elemen muncul di akhir diluar elemen panggilan
         // Before elemen muncul di awal diluar elemen panggilan
-        $("#boxes_wrap").after("<div>Ini elemen After</div>");
+        // $("#boxes_wrap").after("<div>Ini elemen After</div>");
         // Menghapus ada Remove & Empty
         // Remove hapus 1 elemen yang dipanggil
         // $("#boxes_wrap").remove();
         // Empty hanya hapus isi konten elemen yang dipanggil
         // $("#box1").empty();
-
         // --------------------Dimensi--------------------
-
-        var nilaiElemen = $("#boxes_wrap").innerWidth();
-        $("#box1").text(nilaiElemen);
+        // var nilaiElemen = $("#boxes_wrap").innerWidth();
+        // $("#box1").text(nilaiElemen);
+        // --------------------Hide Show Element--------------------
       });
     </script>
   </body>
